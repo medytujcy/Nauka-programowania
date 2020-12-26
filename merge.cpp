@@ -15,8 +15,6 @@ void printVector(string name, vector<int>& vec) {
 vector<int> merge(vector<int> nums1, vector<int> nums2) {
 	int m = nums1.size(), n = nums2.size();
     vector<int> result;
-    //--------------------
-    // DAWAJ MERGE TU POD SPODEM
     int p1 = 0, p2 = 0;
     while(p1 < m || p2 < n)
     {
@@ -44,15 +42,11 @@ vector<int> merge(vector<int> nums1, vector<int> nums2) {
 		}
 		
 	}
-	
     return result;
 }
 
 vector<int> mergesort(vector<int> nums)
 {
-	// TU WPISZ SWOJ KOD
-	// POWIEDZMY, ZE MASZ JUZ NAPISANA FUNKCJE merge(vector<int> lewy vector<int> prawy)
-	// KTORA LACZY DWA POSORTOWANE WEKTORY I ZWRACA JEDEN
 	int n = nums.size();
 	if(n == 1)
 	{
@@ -68,29 +62,20 @@ vector<int> mergesort(vector<int> nums)
 	{
 		right.push_back(nums[i]);
 	}
-//	merge(mergesort(left), mergesort(right));
-	
 	return merge(mergesort(left), mergesort(right));
 }
 
 int main()
 {
-    //cin>>n;
-	vector<int> tab = vector<int>({7,8,11,23,1,4,7,12,53,5,88,14,5,9});
-//	
-//	
-//	vector<int> result = merge(vector<int>({3,5,12,15}),
-//							   vector<int>({6,11,27}));
-//
-//	cout << "zmergeowane:\n";
-//	printVector("wynik: ", result);
+	int n, m;
+	vector<int> input;
+	cin >> n;
+    while (n--) {
+    	cin >> m;
+    	input.push_back(m);
+	}
 	
-//    while (n--) {
-//    	cin>>m;
-//    	tab.push_back(m);
-//	}
-	
-	vector<int> result = mergesort(tab);
+	vector<int> result = mergesort(input);
 	
 	cout << "posortowane mergesortem:\n";
 	printVector("wynik: ", result);
