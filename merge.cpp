@@ -70,7 +70,7 @@ int main()
 	int n, m;
 	vector<int> input;
 	cin >> n;
-    while (n--) {
+	while (n--) {
     	cin >> m;
     	input.push_back(m);
 	}
